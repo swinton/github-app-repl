@@ -19,7 +19,12 @@
     "url": "https://github.com/swinton/github-app-console/issues"
   },
   "homepage": "https://github.com/swinton/github-app-console#readme",
-  "dependencies": {},
+  "dependencies": {
+    "@octokit/app": "^2.2.1",
+    "@octokit/rest": "^16.15.0",
+    "dotenv": "^6.2.0",
+    "jsonwebtoken": "^8.4.0"
+  },
   "devDependencies": {
     "eslint": "^5.13.0",
     "eslint-config-airbnb": "^17.1.0",
