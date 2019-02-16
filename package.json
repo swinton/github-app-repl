@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "description": "🚧🚧🚧🚧🚧🚧",
   "author": "Steve Winton <stevewinton@gmail.com> (https://github.com/swinton)",
-  "main": "index.js",
+  "main": "github-app-repl.js",
   "scripts": {
-    "start": "node --experimental-repl-await ./index.js",
+    "start": "node --experimental-repl-await ./github-app-repl.js",
     "test": "jest --coverage",
-    "lint": "eslint index.js lib/**.js test/**.js"
+    "lint": "eslint github-app-repl.js lib/**.js test/**.js"
   },
   "repository": {
     "type": "git",
@@ -44,7 +44,7 @@
   "jest": {
     "testEnvironment": "node",
     "collectCoverageFrom": [
-      "index.js",
+      "github-app-repl.js",
       "lib/*.js"
     ],
     "coverageThreshold": {
