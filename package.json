@@ -9,6 +9,9 @@
     "test": "jest --coverage",
     "lint": "eslint github-app-repl.js lib/**.js test/**.js"
   },
+  "bin": {
+    "github-app-repl": "./github-app-repl.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/swinton/github-app-repl.git"
