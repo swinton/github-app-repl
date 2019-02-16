@@ -1,5 +1,5 @@
 {
-  "name": "github-app-console",
+  "name": "github-app-repl",
   "version": "0.0.1",
   "description": "🚧🚧🚧🚧🚧🚧",
   "author": "Steve Winton <stevewinton@gmail.com> (https://github.com/swinton)",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/swinton/github-app-console.git"
+    "url": "git+https://github.com/swinton/github-app-repl.git"
   },
   "keywords": [],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/swinton/github-app-console/issues"
+    "url": "https://github.com/swinton/github-app-repl/issues"
   },
-  "homepage": "https://github.com/swinton/github-app-console#readme",
+  "homepage": "https://github.com/swinton/github-app-repl#readme",
   "dependencies": {
     "@octokit/app": "^2.2.1",
     "@octokit/request": "^2.3.0",
