@@ -21,6 +21,7 @@
   "homepage": "https://github.com/swinton/github-app-console#readme",
   "dependencies": {
     "@octokit/app": "^2.2.1",
+    "@octokit/request": "^2.3.0",
     "@octokit/rest": "^16.15.0",
     "dotenv": "^6.2.0",
     "jsonwebtoken": "^8.4.0"
