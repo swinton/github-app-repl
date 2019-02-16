@@ -5,7 +5,7 @@
   "author": "Steve Winton <stevewinton@gmail.com> (https://github.com/swinton)",
   "main": "index.js",
   "scripts": {
-    "start": "node ./index.js",
+    "start": "node --experimental-repl-await ./index.js",
     "test": "jest --coverage",
     "lint": "eslint index.js lib/**.js test/**.js"
   },
