@@ -1,6 +1,6 @@
 require('dotenv').config();
 const Repl = require('repl');
-const App = require('@octokit/app');
+const App = require('./lib/app');
 const { findPrivateKey } = require('./lib/private-key');
 const { extendWith } = require('./lib/utils');
 
