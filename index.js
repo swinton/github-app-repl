@@ -4,16 +4,19 @@ const App = require('./lib/app');
 const { findPrivateKey } = require('./lib/private-key');
 const { extendWith } = require('./lib/utils');
 
-// Instantiate a new app
-const app = new App({ id: process.env.APP_ID, privateKey: findPrivateKey() });
+(async () => {
+  // Instantiate a new app
+  const app = new App({ id: process.env.APP_ID, privateKey: findPrivateKey() });
+  await app.load();
 
-// Context initializer
-const initializeContext = extendWith({ app });
+  // Context initializer
+  const initializeContext = extendWith({ app });
 
-const repl = Repl.start();
+  const repl = Repl.start();
 
-// Place app in repl context as a read-only (immutable) property
-initializeContext(repl.context);
+  // Place app in repl context as a read-only (immutable) property
+  initializeContext(repl.context);
 
-// Listen for the reset event
-repl.on('reset', initializeContext);
+  // Listen for the reset event
+  repl.on('reset', initializeContext);
+})();
