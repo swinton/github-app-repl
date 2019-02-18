@@ -1,6 +1,8 @@
 #!/usr/bin/env node --experimental-repl-await
 
 require('dotenv').config();
+const path = require('path');
+const homedir = require('os').homedir();
 const Repl = require('repl');
 const App = require('./lib/app');
 const { findPrivateKey } = require('./lib/private-key');
@@ -21,4 +23,9 @@ const { extendWith } = require('./lib/utils');
 
   // Listen for the reset event
   repl.on('reset', initializeContext);
+
+  // Initialize a history log file
+  if (repl.setupHistory) {
+    repl.setupHistory(path.join(homedir, '.node_repl_history'));
+  }
 })();
