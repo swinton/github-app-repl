@@ -4,14 +4,14 @@
 
 ## Features
 
-1. Uses the Node `repl` module
-1. With experimental `await` support enabled
-1. Loads your GitHub App and exposes it as `app` in a repl session. 
-1. So you can easily start playing around with it interactively :relaxed:.
+1. Uses [the Node `repl` module](https://nodejs.org/api/repl.html) :repeat:
+1. With [experimental `await` support](https://nodejs.org/api/cli.html#cli_experimental_repl_await) enabled :ok_hand:
+1. Loads your GitHub App and exposes it as `app` in a REPL session :zap:
+1. So you can easily start playing around with it interactively :relaxed:
 
 ## Why?
 
-I like using a repl to experiment with ideas and get comfortable with an API before delving into actual code. This removes some of the boilerplate code required to start working with GitHub Apps in a repl. 
+I like using a REPL to experiment with ideas and get comfortable with an API before delving into actual code. This removes some of the boilerplate code required to start working with GitHub Apps in a REPL.
 
 ## Installation
 
@@ -19,7 +19,7 @@ I like using a repl to experiment with ideas and get comfortable with an API bef
 npm install -D github-app-repl
 ```
 
-### Usage
+## Usage
 
 ```
 npx github-app-repl
@@ -29,8 +29,16 @@ It expects a `APP_ID` environment variable, and corresponding `.pem` file. Most 
 
 ## API
 
-- app.id
-- app.name
-- app.description
-- app.installations()
-- :soon: app.installation({})
+- `app.id`: GitHub App ID
+- `app.name`: GitHub App Name
+- `app.description`: GitHub App Description
+- `app.installations()`: Array of GitHub App Installations
+- :soon: `app.installation({})`: Authenticated Octokit instance for a specific GitHub App Installation
+
+## Examples
+
+:soon:
+
+## Credits
+
+1. [Mastering the Node.js REPL (part 2) – Trabe – Medium](https://medium.com/trabe/mastering-the-node-js-repl-part-2-365c52a5203d)
