@@ -1,4 +1,5 @@
 #!/usr/bin/env node --experimental-repl-await
+
 require('dotenv').config();
 const Repl = require('repl');
 const App = require('./lib/app');
