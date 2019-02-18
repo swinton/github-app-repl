@@ -34,7 +34,8 @@ It expects a `APP_ID` environment variable, and corresponding `.pem` file. Most 
 - `app.description`: GitHub App Description
 - `app.octokit`: Authenticated Octokit instance for your GitHub App
 - `app.installations()`: Array of GitHub App Installations
-- :soon: `app.installation({})`: Authenticated Octokit instance for a specific GitHub App _Installation_
+- `installations`: Pre-loaded dictionary of GitHub App Installations, keyed by installation account login
+- `installations[:login].octokit`: Authenticated Octokit instance for a named GitHub App Installation
 
 ## Examples
 

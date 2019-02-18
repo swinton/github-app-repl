@@ -13,8 +13,11 @@ const { extendWith } = require('./lib/utils');
   const app = new App({ id: process.env.APP_ID, privateKey: findPrivateKey() });
   await app.load();
 
+  // Get installations
+  const installations = await app.installations();
+
   // Context initializer
-  const initializeContext = extendWith({ app });
+  const initializeContext = extendWith({ app, installations });
 
   const repl = Repl.start();
 
