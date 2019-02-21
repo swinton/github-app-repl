@@ -19,13 +19,17 @@ I like using a REPL to experiment with ideas and get comfortable with an API bef
 npm install -D github-app-repl
 ```
 
+It expects a `APP_ID` environment variable, and corresponding `.pem` file. Most Probot projects should have this. 
+
+To find these details for a GitHub App you have installed, log into GitHub and from your profile view go to `Settings > Developer Settings > GitHub Apps > YOUR_APP > EDIT`
+
+From here, you can generate a new private key if you'd like. You will need either need to move the `.pem` file into `gitHub-app-repl`'s directory or update the `.env` file to include a file path to your key. 
+
 ## Usage
 
 ```
 npx github-app-repl
 ```
-
-It expects a `APP_ID` environment variable, and corresponding `.pem` file. Most Probot projects should have this. 
 
 ## API
 
