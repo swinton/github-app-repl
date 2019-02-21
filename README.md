@@ -32,10 +32,11 @@ It expects a `APP_ID` environment variable, and corresponding `.pem` file. Most 
 - `app.id`: GitHub App ID
 - `app.name`: GitHub App Name
 - `app.description`: GitHub App Description
-- `app.octokit`: Authenticated Octokit instance, scoped to your GitHub App
+- `app.octokit`: Authenticated [`@octokit/rest`](https://github.com/octokit/rest.js) instance, scoped to your GitHub App
 - `app.installations()`: Dictionary of GitHub App Installations, keyed by installation account login
 - `installations`: Pre-loaded dictionary of GitHub App Installations, keyed by installation account login
-- `installations[:login].octokit`: Authenticated Octokit instance, scoped to a specific GitHub App installation
+- `installations[:login].octokit`: Authenticated [`@octokit/rest`](https://github.com/octokit/rest.js) instance, scoped to a specific GitHub App installation
+- `installations[:login].graphql`: Authenticated [`@octokit/graphql`](https://github.com/octokit/graphql.js) instance, scoped to a specific GitHub App installation
 
 ## Examples
 
@@ -43,6 +44,26 @@ It expects a `APP_ID` environment variable, and corresponding `.pem` file. Most 
 
 ```javascript
 await installations[owner].octokit.issues.create({owner, repo, title})
+```
+
+### Retrieve the last 3 issues from a repo
+
+```javascript
+await installations[owner].graphql(`query lastIssues($owner: String!, $repo: String!, $num: Int = 3) {
+    repository(owner:$owner, name:$repo) {
+      issues(last:$num) {
+        edges {
+          node {
+            title
+          }
+        }
+      }
+    }
+  }`, {
+    owner: 'octokit',
+    repo: 'graphql.js'
+  }
+})
 ```
 
 ## Credits
