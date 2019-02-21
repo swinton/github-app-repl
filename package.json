@@ -1,6 +1,6 @@
 {
   "name": "github-app-repl",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "description": "A REPL (read–eval–print loop) for GitHub Apps",
   "author": "Steve Winton <stevewinton@gmail.com> (https://github.com/swinton)",
   "main": "github-app-repl.js",
@@ -28,6 +28,7 @@
   "homepage": "https://github.com/swinton/github-app-repl#readme",
   "dependencies": {
     "@octokit/app": "^2.2.1",
+    "@octokit/graphql": "^2.0.1",
     "@octokit/request": "^2.3.0",
     "@octokit/rest": "^16.15.0",
     "dotenv": "^6.2.0",
