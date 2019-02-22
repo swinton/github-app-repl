@@ -19,14 +19,13 @@ I like using a REPL to experiment with ideas and get comfortable with an API bef
 npm install -D github-app-repl
 ```
 
-
 ## Configuration
 
 A couple of environment variables are required for configuration:
 
 1. **`APP_ID`**: This should be set to the ID of your GitHub App. 
     - This is available from the settings page of your GitHub App, as `App ID`.
-1. **`PRIVATE_KEY_PATH`**: This should be set to a  local filesystem path to a private key for your GitHub App. 
+1. **`PRIVATE_KEY_PATH`**: This should be set to a local filesystem path to a private key for your GitHub App. 
     - More information on generating and downloading private keys for your GitHub Apps is [available in the documentation](https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#generating-a-private-key).
 
 These environment variables can either be set directly, or via a `.env` file that follows [this example](https://github.com/swinton/github-app-repl/blob/master/.env.example).
