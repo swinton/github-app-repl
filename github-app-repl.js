@@ -7,9 +7,9 @@ const homedir = require('os').homedir();
 
 const App = require('./lib/app');
 const { findPrivateKey } = require('./lib/private-key');
-const { extendWith } = require('./lib/utils');
 
-(async () => {
+// Context initializer
+const initializeContext = async context => {
   // Instantiate a new app
   const app = new App({ id: process.env.APP_ID, privateKey: findPrivateKey() });
   await app.load();
@@ -17,13 +17,22 @@ const { extendWith } = require('./lib/utils');
   // Get installations
   const installations = await app.installations();
 
-  // Context initializer
-  const initializeContext = extendWith({ app, installations });
+  // Extent context, with app, and installations
+  Object.entries({ app, installations }).forEach(([k, v]) => {
+    Object.defineProperty(context, k, {
+      configurable: false,
+      enumerable: true,
+      value: v
+    });
+  });
+};
 
+(async () => {
+  // Start a repl
   const r = repl.start('> ');
 
-  // Place app in repl context as a read-only (immutable) property
-  initializeContext(r.context);
+  // Initialize
+  await initializeContext(r.context);
 
   // Listen for the reset event
   r.on('reset', initializeContext);
