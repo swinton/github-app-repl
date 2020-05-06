@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Get sleep time in seconds, default to 1 second
+sleeptimesecs=${1:-1}
+
+# Get number of lines to print, default to 20
+numberoflines=${2:-20}
+
+while [ 1 ]; do
+  clear
+  head -n $numberoflines ~/.node_repl_history
+  sleep $sleeptimesecs
+done
