@@ -1,6 +1,6 @@
 {
   "name": "github-app-repl",
-  "version": "0.8.1",
+  "version": "1.0.0",
   "description": "A REPL (read–eval–print loop) for GitHub Apps",
   "author": "Steve Winton <stevewinton@gmail.com> (https://github.com/swinton)",
   "main": "github-app-repl.js",
