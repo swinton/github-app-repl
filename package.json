@@ -30,7 +30,8 @@
     "@octokit/auth-app": "^2.4.5",
     "@octokit/graphql": "^4.3.1",
     "@octokit/rest": "^17.7.0",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "universal-github-app-jwt": "^1.0.2"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
