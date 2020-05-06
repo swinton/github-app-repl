@@ -35,7 +35,7 @@ RUN apt-get update \
     && /bin/bash /tmp/common-setup.sh "$INSTALL_ZSH" "$USERNAME" "$USER_UID" "$USER_GID" \
     && rm /tmp/common-setup.sh \
     #
-    # Remove outdated yarn from /opt and install via package 
+    # Remove outdated yarn from /opt and install via package
     # so it can be easily updated via apt-get upgrade yarn
     && rm -rf /opt/yarn-* \
     && rm -f /usr/local/bin/yarn \
@@ -55,6 +55,9 @@ RUN apt-get update \
     # Tactically remove imagemagick due to https://security-tracker.debian.org/tracker/CVE-2019-10131
     # Can leave in Dockerfile once upstream base image moves to > 7.0.7-28.
     && apt-get purge -y imagemagick imagemagick-6-common \
+    #
+    # Experimental: Install xclip, xsel
+    && apt-get install -y xclip xsel \
     #
     # Install eslint globally
     && sudo -u ${USERNAME} npm install -g eslint \
