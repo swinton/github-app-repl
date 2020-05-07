@@ -56,8 +56,8 @@ RUN apt-get update \
     # Can leave in Dockerfile once upstream base image moves to > 7.0.7-28.
     && apt-get purge -y imagemagick imagemagick-6-common \
     #
-    # Experimental: Install xclip, xsel
-    && apt-get install -y xclip xsel \
+    # Install jq
+    && apt-get install -y jq \
     #
     # Install eslint globally
     && sudo -u ${USERNAME} npm install -g eslint \
